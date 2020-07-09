@@ -15,13 +15,14 @@ class WhereCreateView(CreateView):
     fields = '__all__'
     template_name = 'review/like_create.html'
     success_url = reverse_lazy('review:list')
+    initial = {'category': 'Where'}
 
 class EatCreateView(CreateView):
     model = Eat
     fields = '__all__'
     template_name = 'review/like_create.html'
     success_url = reverse_lazy('review:list')
-
+    initial = {'category': 'eat'}
 
 class LikeUpdateView(UpdateView):
     model = Like
