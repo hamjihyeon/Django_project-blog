@@ -51,3 +51,45 @@ class LikeEatListView(ListView):
     def get_queryset(self):
         like_list = self.model.objects.filter(category__contains='Eat')
         return like_list
+
+class LikeWhereStarList5View(ListView):
+    model = Like
+    template_name = 'review/like_list.html'
+    def get_queryset(self):
+        like_list = self.model.objects.filter(star__contains=5)
+        return like_list
+
+class LikeWhereStarList4View(ListView):
+    model = Like
+    template_name = 'review/like_list.html'
+    def get_queryset(self):
+        like_list = self.model.objects.filter(star__contains=4)
+        return like_list
+
+class LikeWhereStarList3View(ListView):
+    model = Like
+    template_name = 'review/like_list.html'
+    def get_queryset(self):
+        like_list = self.model.objects.filter(star__contains=3)
+        return like_list
+
+class LikeWhereStarList2View(ListView):
+    model = Like
+    template_name = 'review/like_list.html'
+    def get_queryset(self):
+        like_list = self.model.objects.filter(star__contains=2)
+        return like_list
+
+class LikeWhereStarList1View(ListView):
+    model = Like
+    template_name = 'review/like_list.html'
+    def get_queryset(self):
+        like_list = self.model.objects.filter(star__contains=1)
+        return like_list
+
+class LikeWhereStarList0View(ListView):
+    model = Like
+    template_name = 'review/like_list.html'
+    def get_queryset(self):
+        like_list = self.model.objects.filter(star__contains=0)
+        return like_list

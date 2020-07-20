@@ -2,7 +2,7 @@ from django.db import models
 
 class Like(models.Model):
     category = models.CharField(max_length=20)
-    store = models.CharField(max_length=100)
+    which = models.CharField(max_length=100)
     name = models.CharField(max_length=20)
     price = models.PositiveIntegerField()
     image = models.ImageField(blank=True, upload_to="review/%Y/%m/%d/")
@@ -11,7 +11,7 @@ class Like(models.Model):
     star = models.IntegerField(default=0)
 
     def __str__(self):
-        return f'카테고리: {self.category}, 가게이름 : {self.store}, 이름: {self.name}, 가격: {self.price}, 느낀점: {self.feel}, 평점: {self.star}'
+        return f'카테고리: {self.category}, 위치 : {self.which}, 이름: {self.name}, 가격: {self.price}, 느낀점: {self.feel}, 평점: {self.star}'
 
 class Where(Like):
     pass
