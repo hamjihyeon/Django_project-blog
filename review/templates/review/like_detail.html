@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<table class="table">
+    <tr>
+        <td><b>가게이름</b> : {{ like.store }}</td>
+    </tr>
+    <tr>
+        <td><b>이름</b> : {{ like.name }}</td>
+    </tr>
+    <tr>
+        <td><b>가격</b> : {{ like.price }} 원</td>
+    </tr>
+    <tr>
+        <td><b>이미지</b> : {% if like.image != '' %} <img src="{{ like.image.url }}" style="height: 200px; weight:200px">{% endif %}</td>
+    </tr>
+    <tr>
+        <td><b>느낀점</b> : {{ like.feel }}</td>
+    </tr>
+    <tr>
+        <td><b>평점</b> : {{ like.star }}점</td>
+    </tr>
+    <tr>
+        <td><a href="{% url 'review:delete' pk=like.id %}" class="btn btn-danger btn-sm">지울거야</a>
+            <a href="{% url 'review:update' pk=like.id %}" class="btn btn-warning btn-sm">수정할거야</a>
+            <a href="{% url 'review:list' %}" class="btn btn-success btn-sm">홈으로갈거야</a>
+            <button onclick="history.back()" class="btn btn-info btn-sm">뒤로갈거야</button>
+</td>
+    </tr>
+</table>
+</body>
+</html>

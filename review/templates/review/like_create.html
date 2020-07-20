@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Like Update</title>
+    <title>Like Create</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -13,8 +13,9 @@
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-warning btn-sm">수정할거야</button>
-    <button type="button" onclick="history.back()" class="btn btn-info btn-sm">뒤로갈거야</button>
+    <button type="submit" class="btn btn-primary btn-sm">추가할거야</button>
+
+    <button type="button" onclick="history.back()" class="btn btn-info btn-sm">안할거야</button>
 </form>
 </body>
 </html>

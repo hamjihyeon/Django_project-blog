@@ -1,13 +1,12 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import DeleteView, UpdateView, CreateView, ListView
+from django.views.generic import DeleteView, UpdateView, CreateView, ListView, DetailView
 
 from review.models import Like, Eat, Where
 
 
 class LikeListView(ListView):
     model = Like
-    paginate_by = 5
 
 
 class WhereCreateView(CreateView):
@@ -34,3 +33,21 @@ class LikeUpdateView(UpdateView):
 class LikeDeleteView(DeleteView):
     model = Like
     success_url = reverse_lazy('review:list')
+
+class LikeDetailView(DetailView):
+    model = Like
+    success_url = reverse_lazy('review:list')
+
+class LikeWhereListView(ListView):
+    model = Like
+    template_name = 'review/like_list.html'
+    def get_queryset(self):
+        like_list = self.model.objects.filter(category__contains='Where')
+        return like_list
+
+class LikeEatListView(ListView):
+    model = Like
+    template_name = 'review/like_list.html'
+    def get_queryset(self):
+        like_list = self.model.objects.filter(category__contains='Eat')
+        return like_list
